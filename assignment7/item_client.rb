@@ -21,6 +21,11 @@ class ItemClient
       headers: { 'Content-Type' => 'application/json', 'ACCEPT' => 'application/json' }
   end
 
+  def self.doIt(i)
+    put '/items/order', body: i.to_json,
+      headers: { 'Content-Type' => 'application/json', 'ACCEPT' => 'application/json' }
+  end
+
 end
 
 while true
@@ -68,6 +73,15 @@ while true
     stock = gets.chomp
 
     response = ItemClient.update itemId: id, description: desc, price: price, stockQty: stock
+    puts "status code #{response.code}"
+    puts response.body
+    puts
+  when 'doIt'
+    puts
+    puts 'Enter id of item to lookup'
+    id = gets.chomp
+
+    response = ItemClient.doIt itemId: id
     puts "status code #{response.code}"
     puts response.body
     puts

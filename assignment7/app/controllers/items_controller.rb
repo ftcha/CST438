@@ -44,13 +44,12 @@ class ItemsController < ApplicationController
 
     @item = Item.find_by(id: @id)
 
-    @item.description = @description
-    @item.price = @price
-    @item.stockQty = @stockQty
-
-    @item.save
-
     if !@item.nil?
+      @item.description = @description
+      @item.price = @price
+      @item.stockQty = @stockQty
+      @item.save
+
       render json: @item.to_json, status:204
     else
       head 404
@@ -59,15 +58,12 @@ class ItemsController < ApplicationController
 
    # PUT /items/order
   def updateItem
-    itemUpdate = nil
     @id = params[:itemId]
     @item = Item.find_by(id: @id)
 
-    @item.stockQty -= 1
-
-    itemUpdate = @item.save
-
-    if itemUpdate
+    if !@item.nil?
+      @item.stockQty -= 1
+      @item.save
       head 204
     elsif @item.nil?
       head 404

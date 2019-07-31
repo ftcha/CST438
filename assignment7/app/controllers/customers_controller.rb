@@ -58,7 +58,7 @@ class CustomersController < ApplicationController
 
       if @customer.lastOrder3 != 0 && @customer.lastOrder2 != 0 &&
         @customer.lastOrder != 0
-        @customer.award = 0.10 * (@customer.lastOrder + @customer.lastOrder2 + @customer.lastOrder3)/3.0
+        @customer.award = (0.10 * (@customer.lastOrder + @customer.lastOrder2 + @customer.lastOrder3)/3.0).round(2)
       end
     else
       @customer.award = 0
@@ -70,7 +70,6 @@ class CustomersController < ApplicationController
     @customer.save
 
     head 204
-
 
   end
 
