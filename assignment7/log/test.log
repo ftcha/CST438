@@ -1,0 +1,453 @@
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCustomers (20190730053306)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "customers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "lastName" varchar, "firstName" varchar, "lastOrder" float, "lastOrder2" float, "lastOrder3" float, "award" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190730053306"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-07-30 16:56:25.367680"], ["updated_at", "2019-07-30 16:56:25.367680"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 16:58:15 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+Completed 201 Created in 14ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 16:58:15 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+Completed 201 Created in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 16:59:29 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+Completed 201 Created in 13ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 16:59:29 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+Completed 201 Created in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:01:31 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:01:31.912564"], ["updated_at", "2019-07-30 17:01:31.912564"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 22ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:01:31 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:01:31.925366"], ["updated_at", "2019-07-30 17:01:31.925366"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 3ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:03:35 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:03:35.664675"], ["updated_at", "2019-07-30 17:03:35.664675"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 21ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:03:35 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:03:35.676735"], ["updated_at", "2019-07-30 17:03:35.676735"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 3ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:04:22 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:04:22.275193"], ["updated_at", "2019-07-30 17:04:22.275193"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 24ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:04:22 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:04:22.288116"], ["updated_at", "2019-07-30 17:04:22.288116"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 3ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:07:45 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:07:45.396131"], ["updated_at", "2019-07-30 17:07:45.396131"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 21ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:07:45 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:07:45.408245"], ["updated_at", "2019-07-30 17:07:45.408245"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 3ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:09:32 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:09:32.246539"], ["updated_at", "2019-07-30 17:09:32.246539"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 21ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:09:32 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:09:32.258075"], ["updated_at", "2019-07-30 17:09:32.258075"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:10:16 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:10:16.527685"], ["updated_at", "2019-07-30 17:10:16.527685"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 23ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:10:16 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:10:16.540325"], ["updated_at", "2019-07-30 17:10:16.540325"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 3ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:20:23 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:20:23.212313"], ["updated_at", "2019-07-30 17:20:23.212313"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 22ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:20:23 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:20:23.224679"], ["updated_at", "2019-07-30 17:20:23.224679"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 3ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:20:59 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:20:59.504772"], ["updated_at", "2019-07-30 17:20:59.504772"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 22ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:20:59 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:20:59.517905"], ["updated_at", "2019-07-30 17:20:59.517905"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 3ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:21:11 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:21:11.763028"], ["updated_at", "2019-07-30 17:21:11.763028"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 23ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:21:11 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:21:11.776298"], ["updated_at", "2019-07-30 17:21:11.776298"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 3ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:25:45 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:25:45.579450"], ["updated_at", "2019-07-30 17:25:45.579450"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 23ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:26:05 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:26:05.186475"], ["updated_at", "2019-07-30 17:26:05.186475"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 22ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["created_at", "2019-07-30 17:26:05.197345"], ["updated_at", "2019-07-30 17:26:05.197345"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:26:05 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.2ms)
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:28:00 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:28:00.755518"], ["updated_at", "2019-07-30 17:28:00.755518"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 21ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["created_at", "2019-07-30 17:28:00.765490"], ["updated_at", "2019-07-30 17:28:00.765490"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:28:00 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.2ms)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:28:59 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:28:59.047215"], ["updated_at", "2019-07-30 17:28:59.047215"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 21ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["created_at", "2019-07-30 17:28:59.057557"], ["updated_at", "2019-07-30 17:28:59.057557"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:28:59 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.2ms)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:29:30 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:29:30.055827"], ["updated_at", "2019-07-30 17:29:30.055827"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 24ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["created_at", "2019-07-30 17:29:30.066461"], ["updated_at", "2019-07-30 17:29:30.066461"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:29:30 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.2ms)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:30:04 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:30:05.004945"], ["updated_at", "2019-07-30 17:30:05.004945"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 23ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["created_at", "2019-07-30 17:30:05.016703"], ["updated_at", "2019-07-30 17:30:05.016703"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:30:05 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.2ms)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:30:14 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:30:14.142429"], ["updated_at", "2019-07-30 17:30:14.142429"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 23ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["created_at", "2019-07-30 17:30:14.153226"], ["updated_at", "2019-07-30 17:30:14.153226"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:30:14 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.2ms)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:31:08 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:31:08.803078"], ["updated_at", "2019-07-30 17:31:08.803078"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 21ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["created_at", "2019-07-30 17:31:08.813798"], ["updated_at", "2019-07-30 17:31:08.813798"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:31:08 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:32:02 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 17:32:02.420395"], ["updated_at", "2019-07-30 17:32:02.420395"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 22ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "blazeking@gmail.com"], ["lastName", "King"], ["firstName", "Blaze"], ["created_at", "2019-07-30 17:32:02.431181"], ["updated_at", "2019-07-30 17:32:02.431181"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 17:32:02 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"firstName"=>"Blaze", "lastName"=>"King", "email"=>"blazeking@gmail.com", "customer"=>{"email"=>"blazeking@gmail.com", "lastName"=>"King", "firstName"=>"Blaze"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "blazeking@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.2ms)
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m

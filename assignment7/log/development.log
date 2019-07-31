@@ -1,0 +1,1432 @@
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCustomers (20190730053306)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "customers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "lastName" varchar, "firstName" varchar, "lastOrder" float, "lastOrder2" float, "lastOrder3" float, "award" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190730053306"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-07-30 05:33:54.954309"], ["updated_at", "2019-07-30 05:33:54.954309"]]
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 24.10.102.247 at 2019-07-30 05:39:29 +0000
+Cannot render console from 24.10.102.247! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 20ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 24.10.102.247 at 2019-07-30 05:39:53 +0000
+Cannot render console from 24.10.102.247! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 24.10.102.247 at 2019-07-30 05:39:55 +0000
+Cannot render console from 24.10.102.247! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers?id=1" for 24.10.102.247 at 2019-07-30 05:40:09 +0000
+Cannot render console from 24.10.102.247! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#get as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/customers/orders" for 24.10.102.247 at 2019-07-30 05:40:32 +0000
+Cannot render console from 24.10.102.247! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/customers/orders"):
+  
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered collection of /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [3 times] (2.8ms)
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.8ms)
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.3ms)
+Started GET "/customers/order" for 24.10.102.247 at 2019-07-30 05:40:37 +0000
+Cannot render console from 24.10.102.247! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/customers/order"):
+  
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered collection of /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [3 times] (1.1ms)
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (14.8ms)
+Started GET "/customers?email=ftcha@aol.com" for 24.10.102.247 at 2019-07-30 05:41:13 +0000
+Cannot render console from 24.10.102.247! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#get as HTML
+  Parameters: {"email"=>"ftcha@aol.com"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "ftcha@aol.com"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/customers?email=ftcha@aol." for 24.10.102.247 at 2019-07-30 05:41:16 +0000
+Cannot render console from 24.10.102.247! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#get as HTML
+  Parameters: {"email"=>"ftcha@aol."}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "ftcha@aol."], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/customers?email=ftcha@aol" for 24.10.102.247 at 2019-07-30 05:41:19 +0000
+Cannot render console from 24.10.102.247! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#get as HTML
+  Parameters: {"email"=>"ftcha@aol"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "ftcha@aol"], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/customers?email=ftcha@aol.com" for 24.10.102.247 at 2019-07-30 05:41:23 +0000
+Cannot render console from 24.10.102.247! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#get as HTML
+  Parameters: {"email"=>"ftcha@aol.com"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "ftcha@aol.com"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 16:23:57 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CustomersController#create as JSON
+  Parameters: {"lastname"=>"Tcha", "firstName"=>"Francois", "email"=>"ftcha@aol.com", "customer"=>{"email"=>"ftcha@aol.com", "firstName"=>"Francois"}}
+Completed 201 Created in 15ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/customers?email={:email=%3E%22ftcha@aol.com%22}" for 127.0.0.1 at 2019-07-30 16:24:05 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"email"=>"{:email=>\"ftcha@aol.com\"}"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "{:email=>\"ftcha@aol.com\"}"], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 16:25:22 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"lastname"=>"tcha", "firstName"=>"francois", "email"=>"ftcha@aol.com", "customer"=>{"email"=>"ftcha@aol.com", "firstName"=>"francois"}}
+Completed 201 Created in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers?email={:email=%3Enil}" for 127.0.0.1 at 2019-07-30 16:25:43 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"email"=>"{:email=>nil}"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "{:email=>nil}"], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/customers?email={:email=%3Enil}" for 127.0.0.1 at 2019-07-30 16:26:23 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"email"=>"{:email=>nil}"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "{:email=>nil}"], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/customers?email={:email=%3E[%22frank@aol.com%22]}" for 127.0.0.1 at 2019-07-30 16:26:47 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"email"=>"{:email=>[\"frank@aol.com\"]}"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "{:email=>[\"frank@aol.com\"]}"], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 16:26:51 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"lastname"=>"tcha", "firstName"=>nil, "email"=>nil, "customer"=>{"email"=>nil, "firstName"=>nil}}
+Completed 201 Created in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 16:27:01 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"lastname"=>"tcha", "firstName"=>"frank", "email"=>"frank@aol.com", "customer"=>{"email"=>"frank@aol.com", "firstName"=>"frank"}}
+Completed 201 Created in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers?email={:email=%3E[%22frank@aol.com%22]}" for 127.0.0.1 at 2019-07-30 16:27:10 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"email"=>"{:email=>[\"frank@aol.com\"]}"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "{:email=>[\"frank@aol.com\"]}"], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 16:27:44 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"lastname"=>"f", "firstName"=>"t", "email"=>"ft@aol.com", "customer"=>{"email"=>"ft@aol.com", "firstName"=>"t"}}
+Completed 201 Created in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers?email=[%22ft@aol.com%22]" for 127.0.0.1 at 2019-07-30 16:27:50 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"email"=>"[\"ft@aol.com\"]"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "[\"ft@aol.com\"]"], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 16:30:08 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"lastname"=>"f", "firstName"=>"t", "email"=>"ft@aol.com", "customer"=>{"email"=>"ft@aol.com", "firstName"=>"t"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "ft@aol.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 201 Created in 25ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 16:32:21 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"lastname"=>"f", "firstName"=>"t", "email"=>"ft@aol.com", "customer"=>{"email"=>"ft@aol.com", "firstName"=>"t"}}
+Completed 201 Created in 7ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/customers?email={:email=%3E[%22ft@aol.com%22]}" for 127.0.0.1 at 2019-07-30 16:32:41 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"email"=>"{:email=>[\"ft@aol.com\"]}"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "{:email=>[\"ft@aol.com\"]}"], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 66.60.182.202 at 2019-07-30 16:37:04 +0000
+Cannot render console from 66.60.182.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 66.60.182.202 at 2019-07-30 16:37:05 +0000
+Cannot render console from 66.60.182.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers?email=ft@aol.com" for 66.60.182.202 at 2019-07-30 16:37:15 +0000
+Cannot render console from 66.60.182.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#get as HTML
+  Parameters: {"email"=>"ft@aol.com"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "ft@aol.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/customers?id=1" for 66.60.182.202 at 2019-07-30 16:37:21 +0000
+Cannot render console from 66.60.182.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#get as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/customers?id=2" for 66.60.182.202 at 2019-07-30 16:37:24 +0000
+Cannot render console from 66.60.182.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#get as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/customers?id=1" for 66.60.182.202 at 2019-07-30 16:37:27 +0000
+Cannot render console from 66.60.182.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#get as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/customers?email=ftcha@aol.com" for 66.60.182.202 at 2019-07-30 16:37:41 +0000
+Cannot render console from 66.60.182.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#get as HTML
+  Parameters: {"email"=>"ftcha@aol.com"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "ftcha@aol.com"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/customers?id={:id=%3E[%221%22]}" for 127.0.0.1 at 2019-07-30 16:38:09 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"id"=>"{:id=>[\"1\"]}"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/customers?id={:id=%3E[%221%22]}" for 127.0.0.1 at 2019-07-30 16:38:53 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"id"=>"{:id=>[\"1\"]}"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 16:39:05 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"lastname"=>"f", "firstName"=>"t", "email"=>"ftcha@aol.com", "customer"=>{"email"=>"ftcha@aol.com", "firstName"=>"t"}}
+Completed 201 Created in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 16:39:17 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"lastname"=>"a", "firstName"=>"b", "email"=>"ab@aol.com", "customer"=>{"email"=>"ab@aol.com", "firstName"=>"b"}}
+Completed 201 Created in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 16:41:00 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CustomersController#create as JSON
+  Parameters: {"lastname"=>"a", "firstName"=>"b", "email"=>"ab@aol.com", "customer"=>{"email"=>"ab@aol.com", "firstName"=>"b"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "ab@aol.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 201 Created in 28ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/customers?id={:id=%3E[%221%22]}" for 127.0.0.1 at 2019-07-30 16:41:29 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"id"=>"{:id=>[\"1\"]}"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/customers?id={:id=%3E[%222%22]}" for 127.0.0.1 at 2019-07-30 16:41:32 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"id"=>"{:id=>[\"2\"]}"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/customers?email={:email=%3E[%22ab@aol.com%22]}" for 127.0.0.1 at 2019-07-30 16:41:38 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"email"=>"{:email=>[\"ab@aol.com\"]}"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "{:email=>[\"ab@aol.com\"]}"], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 16:41:58 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"lastname"=>"c", "firstName"=>"d", "email"=>"cd@aol.com", "customer"=>{"email"=>"cd@aol.com", "firstName"=>"d"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "cd@aol.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 201 Created in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 16:42:56 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CustomersController#create as JSON
+  Parameters: {"lastname"=>"d", "firstName"=>"c", "email"=>"dc@aol.com", "customer"=>{"email"=>"dc@aol.com", "firstName"=>"c"}}
+Completed 201 Created in 14ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 16:44:02 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"lastName"=>"k", "firstName"=>"z", "email"=>"kz@aol.com", "customer"=>{"email"=>"kz@aol.com", "lastName"=>"k", "firstName"=>"z"}}
+Completed 201 Created in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers?id={:id=%3E[%229%22]}" for 127.0.0.1 at 2019-07-30 16:46:14 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CustomersController#get as */*
+  Parameters: {"id"=>"{:id=>[\"9\"]}"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 13ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/customers?id={:id=%3E[%229%22]}" for 127.0.0.1 at 2019-07-30 16:46:41 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"id"=>"{:id=>[\"9\"]}"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 5ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/customers?id={:id=%3E[%229%22]}" for 127.0.0.1 at 2019-07-30 16:46:59 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CustomersController#get as */*
+  Parameters: {"id"=>"{:id=>[\"9\"]}"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 14ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/customers?id={:id=%3E[%229%22]}" for 127.0.0.1 at 2019-07-30 16:47:38 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"id"=>"{:id=>[\"9\"]}"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 5ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/customers?id={:id=%3E[%229%22]}" for 127.0.0.1 at 2019-07-30 16:47:55 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CustomersController#get as */*
+  Parameters: {"id"=>"{:id=>[\"9\"]}"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 13ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/customers?email={:email=%3E[%22ft@aol.com%22]}" for 127.0.0.1 at 2019-07-30 16:48:00 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"email"=>"{:email=>[\"ft@aol.com\"]}"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "{:email=>[\"ft@aol.com\"]}"], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/customers?email={:email=%3E[%22frank@aol.com%22]}" for 127.0.0.1 at 2019-07-30 16:48:14 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"email"=>"{:email=>[\"frank@aol.com\"]}"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "{:email=>[\"frank@aol.com\"]}"], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/customers?email={:email=%3E[%22ftcha@aol.com%22]}" for 127.0.0.1 at 2019-07-30 16:48:27 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"email"=>"{:email=>[\"ftcha@aol.com\"]}"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "{:email=>[\"ftcha@aol.com\"]}"], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE "customers"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "frank@aol.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "tomk@aol.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "test@gkd.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "test@gkd.com"], ["lastName", "Test"], ["firstName", "Test"], ["created_at", "2019-07-30 17:16:24.370338"], ["updated_at", "2019-07-30 17:16:24.370338"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "tom@idido.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "tom@idido.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "tom@idido.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "tom@idido.com"], ["lastName", "Test"], ["firstName", "Test"], ["created_at", "2019-07-30 17:17:24.442529"], ["updated_at", "2019-07-30 17:17:24.442529"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "tom@idido.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 18:13:09 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CustomersController#create as JSON
+  Parameters: {"lastName"=>"f", "firstName"=>"t", "email"=>"imd@hil.com", "customer"=>{"email"=>"imd@hil.com", "lastName"=>"f", "firstName"=>"t"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "imd@hil.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "imd@hil.com"], ["lastName", "f"], ["firstName", "t"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 18:13:09.993878"], ["updated_at", "2019-07-30 18:13:09.993878"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 30ms (Views: 0.2ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/customers?id={:id=%3E[%224%22]}" for 127.0.0.1 at 2019-07-30 18:13:16 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"id"=>"{:id=>[\"4\"]}"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/customers?id={:id=%3E%221%22}" for 127.0.0.1 at 2019-07-30 18:14:14 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CustomersController#get as */*
+  Parameters: {"id"=>"{:id=>\"1\"}"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 13ms (ActiveRecord: 0.4ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 18:15:49 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CustomersController#create as JSON
+  Parameters: {"lastName"=>"i", "firstName"=>"k", "email"=>"ik@aol.com", "customer"=>{"email"=>"ik@aol.com", "lastName"=>"i", "firstName"=>"k"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "ik@aol.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "ik@aol.com"], ["lastName", "i"], ["firstName", "k"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 18:15:50.113104"], ["updated_at", "2019-07-30 18:15:50.113104"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 32ms (Views: 0.2ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/customers?id={:id=%3E%221%22}" for 127.0.0.1 at 2019-07-30 18:16:01 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"id"=>"{:id=>\"1\"}"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/customers?email={:email=%3E%22frank@aol.com%22}" for 127.0.0.1 at 2019-07-30 18:16:39 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"email"=>"{:email=>\"frank@aol.com\"}"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "{:email=>\"frank@aol.com\"}"], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/customers?email={:email=%3E%22ik@aol.com%22}" for 127.0.0.1 at 2019-07-30 18:17:10 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CustomersController#get as */*
+  Parameters: {"email"=>"{:email=>\"ik@aol.com\"}"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "{:email=>\"ik@aol.com\"}"], ["LIMIT", 1]]
+Completed 404 Not Found in 13ms (ActiveRecord: 0.5ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-07-30 18:18:41 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CustomersController#create as JSON
+  Parameters: {"lastName"=>"i", "firstName"=>"i", "email"=>"ii@aol.com", "customer"=>{"email"=>"ii@aol.com", "lastName"=>"i", "firstName"=>"i"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "ii@aol.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "ii@aol.com"], ["lastName", "i"], ["firstName", "i"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-30 18:18:42.164608"], ["updated_at", "2019-07-30 18:18:42.164608"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 32ms (Views: 0.2ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/customers?email=ii@aol.com" for 127.0.0.1 at 2019-07-30 18:18:48 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"email"=>"ii@aol.com"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "ii@aol.com"], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/customers?id=6" for 127.0.0.1 at 2019-07-30 18:19:10 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CustomersController#get as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateItems (20190730224832)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "desription" varchar, "price" float, "stockQty" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190730224832"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "customers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "lastName" varchar, "firstName" varchar, "lastOrder" float, "lastOrder2" float, "lastOrder3" float, "award" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "desription" varchar, "price" float, "stockQty" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (6.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190730224832)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (6.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190730053306);
+
+[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-07-30 23:18:34.145186"], ["updated_at", "2019-07-30 23:18:34.145186"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "customers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "lastName" varchar, "firstName" varchar, "lastOrder" float, "lastOrder2" float, "lastOrder3" float, "award" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "desription" varchar, "price" float, "stockQty" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (6.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190730224832)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (6.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190730053306);
+
+[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-07-30 23:18:34.208984"], ["updated_at", "2019-07-30 23:18:34.208984"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2019-07-30 23:18:34.217602"], ["key", "environment"]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "customers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "lastName" varchar, "firstName" varchar, "lastOrder" float, "lastOrder2" float, "lastOrder3" float, "award" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "desription" varchar, "price" float, "stockQty" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (8.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190730224832)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (5.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190730053306);
+
+[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-07-30 23:19:06.634407"], ["updated_at", "2019-07-30 23:19:06.634407"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "customers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "lastName" varchar, "firstName" varchar, "lastOrder" float, "lastOrder2" float, "lastOrder3" float, "award" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "desription" varchar, "price" float, "stockQty" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190730224832)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (7.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190730053306);
+
+[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-07-30 23:19:06.698027"], ["updated_at", "2019-07-30 23:19:06.698027"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2019-07-30 23:19:06.706411"], ["key", "environment"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCustomers (20190730053306)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "customers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "lastName" varchar, "firstName" varchar, "lastOrder" float, "lastOrder2" float, "lastOrder3" float, "award" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190730053306"]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateItems (20190730224832)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar, "price" float, "stockQty" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190730224832"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-07-30 23:19:15.811367"], ["updated_at", "2019-07-30 23:19:15.811367"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "items" ("description", "price", "stockQty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["description", "Hello There"], ["price", 1.0], ["stockQty", 1], ["created_at", "2019-07-30 23:20:33.737139"], ["updated_at", "2019-07-30 23:20:33.737139"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Started GET "/" for 66.60.182.202 at 2019-07-30 23:22:24 +0000
+Cannot render console from 66.60.182.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (3.4ms)
+Completed 200 OK in 21ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers?id=1" for 66.60.182.202 at 2019-07-30 23:22:32 +0000
+Cannot render console from 66.60.182.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CustomersController#get as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `type' for {:default=>0}:Hash):
+  
+app/controllers/customers_controller.rb:34:in `get'
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.1ms)
+Started GET "/items?id=1" for 66.60.182.202 at 2019-07-30 23:22:35 +0000
+Cannot render console from 66.60.182.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#get as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "items" ("description", "price", "stockQty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["description", "Frank Hello"], ["price", 2.0], ["stockQty", 5], ["created_at", "2019-07-31 00:37:42.928611"], ["updated_at", "2019-07-31 00:37:42.928611"]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Started POST "/items" for 127.0.0.1 at 2019-07-31 00:45:02 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#create as JSON
+  Parameters: {"description"=>"Frank", "price"=>"2", "stockQty"=>"3", "item"=>{"description"=>"Frank", "price"=>"2", "stockQty"=>"3"}}
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 0.4ms)
+
+
+  
+NameError (undefined local variable or method `item' for #<ItemsController:0x00007f0b5049b490>):
+  
+app/controllers/items_controller.rb:7:in `create'
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.0ms)
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (78.6ms)
+Started POST "/items" for 127.0.0.1 at 2019-07-31 00:47:29 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#create as JSON
+  Parameters: {"description"=>"frank", "price"=>"2", "stockQty"=>"5", "item"=>{"description"=>"frank", "price"=>"2", "stockQty"=>"5"}}
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (undefined local variable or method `item' for #<ItemsController:0x000000000322fb70>):
+  
+app/controllers/items_controller.rb:7:in `create'
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.3ms)
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.8ms)
+Started POST "/items" for 127.0.0.1 at 2019-07-31 00:52:18 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#create as JSON
+  Parameters: {"description"=>"frank", "price"=>"5", "stockQty"=>"5", "item"=>{"description"=>"frank", "price"=>"5", "stockQty"=>"5"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "items" ("description", "price", "stockQty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["description", "frank"], ["price", 5.0], ["stockQty", 5], ["created_at", "2019-07-31 00:52:18.287325"], ["updated_at", "2019-07-31 00:52:18.287325"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 21ms (Views: 0.1ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2019-07-31 00:52:32 +0000
+Processing by ItemsController#create as JSON
+  Parameters: {"description"=>"frank", "price"=>"0", "stockQty"=>"0", "item"=>{"description"=>"frank", "price"=>"0", "stockQty"=>"0"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/items?id=1" for 127.0.0.1 at 2019-07-31 00:57:08 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#get as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/items?id=5" for 127.0.0.1 at 2019-07-31 00:58:46 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#get as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 404 Not Found in 12ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/items?id=2" for 127.0.0.1 at 2019-07-31 00:59:28 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#get as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/items?id=5" for 127.0.0.1 at 2019-07-31 00:59:33 +0000
+Processing by ItemsController#get as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/items?id=4" for 127.0.0.1 at 2019-07-31 00:59:36 +0000
+Processing by ItemsController#get as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/items?id=3" for 127.0.0.1 at 2019-07-31 00:59:39 +0000
+Processing by ItemsController#get as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/items" for 127.0.0.1 at 2019-07-31 01:04:07 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#updateItem as JSON
+  Parameters: {"itemId"=>"2", "description"=>"Frank", "price"=>"5.00", "stockQty"=>"10", "item"=>{"description"=>"Frank", "price"=>"5.00", "stockQty"=>"10"}}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "items" SET "description" = ?, "price" = ?, "stockQty" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["description", "Frank"], ["price", 5.0], ["stockQty", 10], ["updated_at", "2019-07-31 01:04:07.859944"], ["id", 2]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 22ms (Views: 0.1ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/items?id=2" for 127.0.0.1 at 2019-07-31 01:04:24 +0000
+Processing by ItemsController#get as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/items" for 127.0.0.1 at 2019-07-31 01:05:34 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#updateItem as JSON
+  Parameters: {"itemId"=>"2", "description"=>"frank", "price"=>"2", "stockQty"=>"2", "item"=>{"description"=>"frank", "price"=>"2", "stockQty"=>"2"}}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "items" SET "description" = ?, "price" = ?, "stockQty" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["description", "frank"], ["price", 2.0], ["stockQty", 2], ["updated_at", "2019-07-31 01:05:34.543743"], ["id", 2]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 23ms (Views: 0.1ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/items?id=2" for 127.0.0.1 at 2019-07-31 01:05:36 +0000
+Processing by ItemsController#get as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/items" for 127.0.0.1 at 2019-07-31 01:07:39 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#updateItem as JSON
+  Parameters: {"itemId"=>["2"], "description"=>"frank gets it\n", "price"=>"3", "stockQty"=>"3", "item"=>{"description"=>"frank gets it\n", "price"=>"3", "stockQty"=>"3"}}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = 2 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "items" SET "description" = ?, "price" = ?, "stockQty" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["description", "frank gets it\n"], ["price", 3.0], ["stockQty", 3], ["updated_at", "2019-07-31 01:07:39.534157"], ["id", 2]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 23ms (Views: 0.1ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/items?id=2" for 127.0.0.1 at 2019-07-31 01:07:42 +0000
+Processing by ItemsController#get as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2019-07-31 01:08:41 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#create as JSON
+  Parameters: {"description"=>"frank get it", "price"=>"2", "stockQty"=>"2", "item"=>{"description"=>"frank get it", "price"=>"2", "stockQty"=>"2"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "items" ("description", "price", "stockQty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["description", "frank get it"], ["price", 2.0], ["stockQty", 2], ["created_at", "2019-07-31 01:08:41.817756"], ["updated_at", "2019-07-31 01:08:41.817756"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 22ms (Views: 0.1ms | ActiveRecord: 7.5ms)
+
+
+Started PUT "/items" for 127.0.0.1 at 2019-07-31 01:09:53 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#updateItem as JSON
+  Parameters: {"itemId"=>["1"], "description"=>"I see you", "price"=>["9.00"], "stockQty"=>["5"], "item"=>{"description"=>"I see you", "price"=>["9.00"], "stockQty"=>["5"]}}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `to_f' for ["9.00"]:Array
+Did you mean?  to_s
+               to_a
+               to_h):
+  
+app/controllers/items_controller.rb:51:in `updateItem'
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.2ms)
+Started PUT "/items" for 127.0.0.1 at 2019-07-31 01:10:33 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#updateItem as JSON
+  Parameters: {"itemId"=>["2"], "description"=>"i see you", "price"=>"2.00", "stockQty"=>"8", "item"=>{"description"=>"i see you", "price"=>"2.00", "stockQty"=>"8"}}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = 2 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "items" SET "description" = ?, "price" = ?, "stockQty" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["description", "i see you"], ["price", 2.0], ["stockQty", 8], ["updated_at", "2019-07-31 01:10:33.653973"], ["id", 2]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 23ms (Views: 0.1ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/items?id=2" for 127.0.0.1 at 2019-07-31 01:10:37 +0000
+Processing by ItemsController#get as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/items" for 127.0.0.1 at 2019-07-31 01:11:33 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#updateItem as JSON
+  Parameters: {"itemId"=>["2"], "description"=>"You see me", "price"=>"8.59", "stockQty"=>["3"], "item"=>{"description"=>"You see me", "price"=>"8.59", "stockQty"=>["3"]}}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = 2 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 204 No Content in 21ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/items?id=3" for 127.0.0.1 at 2019-07-31 01:11:37 +0000
+Processing by ItemsController#get as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items?id=2" for 127.0.0.1 at 2019-07-31 01:11:43 +0000
+Processing by ItemsController#get as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2019-07-31 01:14:13 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#create as JSON
+  Parameters: {"description"=>"Frank see you", "price"=>"8", "stockQty"=>"5", "item"=>{"description"=>"Frank see you", "price"=>"8", "stockQty"=>"5"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "items" ("description", "price", "stockQty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["description", "Frank see you"], ["price", 8.0], ["stockQty", 5], ["created_at", "2019-07-31 01:14:14.036298"], ["updated_at", "2019-07-31 01:14:14.036298"]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 22ms (Views: 0.1ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2019-07-31 01:15:44 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#create as JSON
+  Parameters: {"description"=>"See you when I see you", "price"=>"89.99", "stockQty"=>"1", "item"=>{"description"=>"See you when I see you", "price"=>"89.99", "stockQty"=>"1"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "items" ("description", "price", "stockQty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["description", "See you when I see you"], ["price", 89.99], ["stockQty", 1], ["created_at", "2019-07-31 01:15:44.277521"], ["updated_at", "2019-07-31 01:15:44.277521"]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 20ms (Views: 0.1ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2019-07-31 01:16:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#create as JSON
+  Parameters: {"description"=>"Ninja are so cool.", "price"=>"3.23", "stockQty"=>"77", "item"=>{"description"=>"Ninja are so cool.", "price"=>"3.23", "stockQty"=>"77"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "items" ("description", "price", "stockQty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["description", "Ninja are so cool."], ["price", 3.23], ["stockQty", 77], ["created_at", "2019-07-31 01:16:26.440445"], ["updated_at", "2019-07-31 01:16:26.440445"]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 20ms (Views: 0.1ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/items?id=7" for 127.0.0.1 at 2019-07-31 01:16:34 +0000
+Processing by ItemsController#get as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/items" for 127.0.0.1 at 2019-07-31 01:17:33 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#updateItem as JSON
+  Parameters: {"itemId"=>["5"], "description"=>"Butterflies are so pretty.", "price"=>"8.23", "stockQty"=>"23", "item"=>{"description"=>"Butterflies are so pretty.", "price"=>"8.23", "stockQty"=>"23"}}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = 5 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "items" SET "description" = ?, "price" = ?, "stockQty" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["description", "Butterflies are so pretty."], ["price", 8.23], ["stockQty", 23], ["updated_at", "2019-07-31 01:17:33.327492"], ["id", 5]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 25ms (Views: 0.1ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/items?id=5" for 127.0.0.1 at 2019-07-31 01:17:36 +0000
+Processing by ItemsController#get as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2019-07-31 01:18:33 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#create as JSON
+  Parameters: {"description"=>"diamond ring", "price"=>"1500.00", "stockQty"=>"3", "item"=>{"description"=>"diamond ring", "price"=>"1500.00", "stockQty"=>"3"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "items" ("description", "price", "stockQty", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["description", "diamond ring"], ["price", 1500.0], ["stockQty", 3], ["created_at", "2019-07-31 01:18:33.256312"], ["updated_at", "2019-07-31 01:18:33.256312"]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 21ms (Views: 0.1ms | ActiveRecord: 6.5ms)
+
+
+Started PUT "/items" for 127.0.0.1 at 2019-07-31 01:19:29 +0000
+Processing by ItemsController#updateItem as JSON
+  Parameters: {"itemId"=>["8"], "description"=>"diamond ring", "price"=>"1650.00", "stockQty"=>"3", "item"=>{"description"=>"diamond ring", "price"=>"1650.00", "stockQty"=>"3"}}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = 8 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "items" SET "price" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["price", 1650.0], ["updated_at", "2019-07-31 01:19:29.821053"], ["id", 8]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 11ms (Views: 0.1ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/items?id=8" for 127.0.0.1 at 2019-07-31 01:19:35 +0000
+Processing by ItemsController#get as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-07-31 01:29:09 +0000
+  
+NoMethodError (undefined method `type' for {:default=>0}:Hash):
+  
+activerecord (5.0.7.2) lib/active_record/attribute_methods/time_zone_conversion.rb:90:in `create_time_zone_conversion_attribute?'
+activerecord (5.0.7.2) lib/active_record/attribute_methods/time_zone_conversion.rb:78:in `block (2 levels) in inherited'
+activerecord (5.0.7.2) lib/active_record/attribute_decorators.rb:62:in `block in matching'
+activerecord (5.0.7.2) lib/active_record/attribute_decorators.rb:61:in `select'
+activerecord (5.0.7.2) lib/active_record/attribute_decorators.rb:61:in `matching'
+activerecord (5.0.7.2) lib/active_record/attribute_decorators.rb:57:in `decorators_for'
+activerecord (5.0.7.2) lib/active_record/attribute_decorators.rb:48:in `apply'
+activerecord (5.0.7.2) lib/active_record/attribute_decorators.rb:30:in `block in load_schema!'
+activerecord (5.0.7.2) lib/active_record/attribute_decorators.rb:29:in `each'
+activerecord (5.0.7.2) lib/active_record/attribute_decorators.rb:29:in `load_schema!'
+activerecord (5.0.7.2) lib/active_record/model_schema.rb:455:in `block in load_schema'
+/home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0/monitor.rb:230:in `mon_synchronize'
+activerecord (5.0.7.2) lib/active_record/model_schema.rb:452:in `load_schema'
+activerecord (5.0.7.2) lib/active_record/model_schema.rb:353:in `attribute_types'
+activerecord (5.0.7.2) lib/active_record/attribute_methods.rb:164:in `attribute_names'
+actionpack (5.0.7.2) lib/action_controller/metal/params_wrapper.rb:107:in `block in include'
+/home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0/mutex_m.rb:78:in `synchronize'
+/home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0/mutex_m.rb:78:in `mu_synchronize'
+actionpack (5.0.7.2) lib/action_controller/metal/params_wrapper.rb:101:in `include'
+actionpack (5.0.7.2) lib/action_controller/metal/params_wrapper.rb:269:in `_extract_parameters'
+actionpack (5.0.7.2) lib/action_controller/metal/params_wrapper.rb:265:in `_wrap_parameters'
+actionpack (5.0.7.2) lib/action_controller/metal/params_wrapper.rb:235:in `process_action'
+activerecord (5.0.7.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.7.2) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.7.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.7.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.7.2) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.7.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.7.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.7.2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.7.2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.7.2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.7.2) lib/action_dispatch/routing/route_set.rb:727:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.7.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.4ms)
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.0ms)
+Started POST "/customers" for 127.0.0.1 at 2019-07-31 01:31:00 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+NoMethodError (undefined method `type' for {:default=>0}:Hash):
+  
+activerecord (5.0.7.2) lib/active_record/attribute_methods/time_zone_conversion.rb:90:in `create_time_zone_conversion_attribute?'
+activerecord (5.0.7.2) lib/active_record/attribute_methods/time_zone_conversion.rb:78:in `block (2 levels) in inherited'
+activerecord (5.0.7.2) lib/active_record/attribute_decorators.rb:62:in `block in matching'
+activerecord (5.0.7.2) lib/active_record/attribute_decorators.rb:61:in `select'
+activerecord (5.0.7.2) lib/active_record/attribute_decorators.rb:61:in `matching'
+activerecord (5.0.7.2) lib/active_record/attribute_decorators.rb:57:in `decorators_for'
+activerecord (5.0.7.2) lib/active_record/attribute_decorators.rb:48:in `apply'
+activerecord (5.0.7.2) lib/active_record/attribute_decorators.rb:30:in `block in load_schema!'
+activerecord (5.0.7.2) lib/active_record/attribute_decorators.rb:29:in `each'
+activerecord (5.0.7.2) lib/active_record/attribute_decorators.rb:29:in `load_schema!'
+activerecord (5.0.7.2) lib/active_record/model_schema.rb:455:in `block in load_schema'
+/home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0/monitor.rb:230:in `mon_synchronize'
+activerecord (5.0.7.2) lib/active_record/model_schema.rb:452:in `load_schema'
+activerecord (5.0.7.2) lib/active_record/model_schema.rb:353:in `attribute_types'
+activerecord (5.0.7.2) lib/active_record/attribute_methods.rb:164:in `attribute_names'
+actionpack (5.0.7.2) lib/action_controller/metal/params_wrapper.rb:107:in `block in include'
+/home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0/mutex_m.rb:78:in `synchronize'
+/home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0/mutex_m.rb:78:in `mu_synchronize'
+actionpack (5.0.7.2) lib/action_controller/metal/params_wrapper.rb:101:in `include'
+actionpack (5.0.7.2) lib/action_controller/metal/params_wrapper.rb:269:in `_extract_parameters'
+actionpack (5.0.7.2) lib/action_controller/metal/params_wrapper.rb:265:in `_wrap_parameters'
+actionpack (5.0.7.2) lib/action_controller/metal/params_wrapper.rb:235:in `process_action'
+activerecord (5.0.7.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.7.2) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.7.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.7.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.7.2) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.7.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.7.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.7.2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.7.2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.7.2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.7.2) lib/action_dispatch/routing/route_set.rb:727:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.7.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.4ms)
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.9ms)
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.4ms)
+Started POST "/customers" for 127.0.0.1 at 2019-07-31 01:34:27 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CustomersController#create as JSON
+  Parameters: {"lastName"=>"sldkflskf", "firstName"=>"lakdlkfsd", "email"=>"aldkfklsdf@aol.com", "customer"=>{"email"=>"aldkfklsdf@aol.com", "lastName"=>"sldkflskf", "firstName"=>"lakdlkfsd"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "aldkfklsdf@aol.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "aldkfklsdf@aol.com"], ["lastName", "sldkflskf"], ["firstName", "lakdlkfsd"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-31 01:34:27.296045"], ["updated_at", "2019-07-31 01:34:27.296045"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 31ms (Views: 0.1ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-07-31 01:35:01 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CustomersController#create as JSON
+  Parameters: {"lastName"=>"dfi", "firstName"=>"dkf", "email"=>"dsidf@aol.com", "customer"=>{"email"=>"dsidf@aol.com", "lastName"=>"dfi", "firstName"=>"dkf"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "dsidf@aol.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "dsidf@aol.com"], ["lastName", "dfi"], ["firstName", "dkf"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-31 01:35:02.048629"], ["updated_at", "2019-07-31 01:35:02.048629"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 29ms (Views: 0.2ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/customers?email=dsidf@aol.com" for 127.0.0.1 at 2019-07-31 01:35:15 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"email"=>"dsidf@aol.com"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "dsidf@aol.com"], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/customers?id={:id=%3E%222%22}" for 127.0.0.1 at 2019-07-31 01:35:20 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"id"=>"{:id=>\"2\"}"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/customers?id={:id=%3E%221%22}" for 127.0.0.1 at 2019-07-31 01:35:23 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"id"=>"{:id=>\"1\"}"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/customers?id={:id=%3E%221%22}" for 127.0.0.1 at 2019-07-31 01:35:31 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"id"=>"{:id=>\"1\"}"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/customers?id=1" for 127.0.0.1 at 2019-07-31 01:36:21 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CustomersController#get as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/customers?id=2" for 127.0.0.1 at 2019-07-31 01:36:23 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/customers?email=dsidf@aol.com" for 127.0.0.1 at 2019-07-31 01:36:30 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"email"=>"dsidf@aol.com"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "dsidf@aol.com"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items?id=3" for 127.0.0.1 at 2019-07-31 01:36:42 +0000
+Processing by ItemsController#get as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-07-31 01:44:01 +0000
+Processing by CustomersController#create as JSON
+  Parameters: {"lastName"=>"Boyce", "firstName"=>"Codd", "email"=>"bc@csumb.edu", "customer"=>{"email"=>"bc@csumb.edu", "lastName"=>"Boyce", "firstName"=>"Codd"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "bc@csumb.edu"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "bc@csumb.edu"], ["lastName", "Boyce"], ["firstName", "Codd"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0], ["created_at", "2019-07-31 01:44:11.244923"], ["updated_at", "2019-07-31 01:44:11.244923"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 22ms (Views: 0.1ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/customers?email=bc@csumb.edu" for 127.0.0.1 at 2019-07-31 01:44:25 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"email"=>"bc@csumb.edu"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "bc@csumb.edu"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/customers?id=3" for 127.0.0.1 at 2019-07-31 01:44:32 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCustomers (20190730053306)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "customers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "lastName" varchar, "firstName" varchar, "lastOrder" float, "lastOrder2" float, "lastOrder3" float, "award" float)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190730053306"]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateItems (20190730224832)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar, "price" float, "stockQty" integer)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190730224832"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-07-31 01:48:19.781104"], ["updated_at", "2019-07-31 01:48:19.781104"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started POST "/customers" for 127.0.0.1 at 2019-07-31 01:48:39 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CustomersController#create as JSON
+  Parameters: {"lastName"=>"Tcha", "firstName"=>"Francois", "email"=>"ftcha@aol.com", "customer"=>{"email"=>"ftcha@aol.com", "lastName"=>"Tcha", "firstName"=>"Francois"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "ftcha@aol.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "ftcha@aol.com"], ["lastName", "Tcha"], ["firstName", "Francois"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 26ms (Views: 0.1ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-07-31 01:49:49 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CustomersController#create as JSON
+  Parameters: {"lastName"=>"Boyce", "firstName"=>"Codd", "email"=>"bc@csumb.edu", "customer"=>{"email"=>"bc@csumb.edu", "lastName"=>"Boyce", "firstName"=>"Codd"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "bc@csumb.edu"], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "customers" ("email", "lastName", "firstName", "lastOrder", "lastOrder2", "lastOrder3", "award") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "bc@csumb.edu"], ["lastName", "Boyce"], ["firstName", "Codd"], ["lastOrder", 0.0], ["lastOrder2", 0.0], ["lastOrder3", 0.0], ["award", 0.0]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 28ms (Views: 0.1ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/customers?email=bc@csumb.edu" for 127.0.0.1 at 2019-07-31 01:50:01 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"email"=>"bc@csumb.edu"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "bc@csumb.edu"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/customers?id=2" for 127.0.0.1 at 2019-07-31 01:50:06 +0000
+Processing by CustomersController#get as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2019-07-31 01:50:39 +0000
+Processing by ItemsController#create as JSON
+  Parameters: {"description"=>"diamond ring", "price"=>"1500.00", "stockQty"=>"3", "item"=>{"description"=>"diamond ring", "price"=>"1500.00", "stockQty"=>"3"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "items" ("description", "price", "stockQty") VALUES (?, ?, ?)[0m  [["description", "diamond ring"], ["price", 1500.0], ["stockQty", 3]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 13ms (Views: 0.1ms | ActiveRecord: 7.3ms)
+
+
+Started PUT "/items" for 127.0.0.1 at 2019-07-31 01:51:03 +0000
+Processing by ItemsController#updateItem as JSON
+  Parameters: {"itemId"=>["1"], "description"=>"diamond ring", "price"=>"1650.00", "stockQty"=>"3", "item"=>{"description"=>"diamond ring", "price"=>"1650.00", "stockQty"=>"3"}}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "items" SET "price" = ? WHERE "items"."id" = ?[0m  [["price", 1650.0], ["id", 1]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 10ms (Views: 0.1ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/items?id=1" for 127.0.0.1 at 2019-07-31 01:51:07 +0000
+Processing by ItemsController#get as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
