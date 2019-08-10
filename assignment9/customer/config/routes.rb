@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/customers' => 'customers#get'
+  post '/customers' => 'customers#create'
+  put '/customers/order' => 'customers#processOrder'
+  
+  get '/items' => 'items#get'
+  post '/items' => 'items#create'
+  put '/items' => 'items#update'
+  put '/items/order' => 'items#updateItem'
 end
