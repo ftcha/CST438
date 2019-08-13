@@ -1,35 +1,7 @@
 class OrdersController < ApplicationController
    
-   # GET /orders
-    def show
-        order = Order.find_by(id: params[:id])
-        if order.nil?
-           render json: {error: "Order not found. #{params[:id]}" }, status: 404
-        else
-            render json: order, status: 200
-        end
-    end
-    
-    # GET /orders
-    # search by customerId or email
-    def search
-        customerId = params['customerId']
-        email = params['email']
-        if !email.nil?
-            code, customer = Customer.getCustomerByEmail(email)
-            if code !=200
-                render json: {error: "Customer email not found. #{email}" }, status: 400
-                return
-            end
-            customerId = customer[:id]
-        end
-        orders = Order.where(customerId: customerId)
-        render json: orders, status: 200
-    end
-    
     # POST /orders
     # POST /orders.json
-    
     def create
         @order = Order.new
         code, customer = Customer.getCustomerByEmail(params[:email])
@@ -59,4 +31,32 @@ class OrdersController < ApplicationController
             render json: @order.errors, status: 400
         end
     end
+   
+   # GET /orders
+    def show
+        order = Order.find_by(id: params[:id])
+        if order.nil?
+           render json: {error: "Order not found. #{params[:id]}" }, status: 404
+        else
+            render json: order, status: 200
+        end
+    end
+    
+    # GET /orders
+    # search by customerId or email
+    def search
+        customerId = params['customerId']
+        email = params['email']
+        if !email.nil?
+            code, customer = Customer.getCustomerByEmail(email)
+            if code !=200
+                render json: {error: "Customer email not found. #{email}" }, status: 400
+                return
+            end
+            customerId = customer[:id]
+        end
+        orders = Order.where(customerId: customerId)
+        render json: orders, status: 200
+    end
+    
 end
