@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
           return
         end 
         
-        code, item = Item.getItemById(params[:itemId] ) 
+        code, item = Item.getItemById( params[:itemId] ) 
         if code != 200
           render json: { error: "Item id not found. #{ params[:itemId] }" }, status: 400
           return
