@@ -64,7 +64,7 @@ end
 command = true
 
 while command 
-  puts "What do you want to do: (3) Register Customer, (5) Create Item, (1) New Order, (4) Lookup Customer, (6) Lookup Item, (2) Retrieve Order, (7) Quit"
+  puts "What do you want to do: (1) New Order, (2) Retrieve Order, (3) Register Customer, (4) Lookup Customer, (5) Create Item, (6) Lookup Item, (7) Quit"
   cmd = gets.chomp! 
   puts  
   case cmd
