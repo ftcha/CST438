@@ -1,6 +1,6 @@
 class SendToCustomerApp
     include HTTParty
-    base uri "http://localhost:8081"
+    base_uri "http://localhost:8081"
     format :json
     
     def self.getCustomerByEmail(email)
