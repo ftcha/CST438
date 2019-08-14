@@ -21,10 +21,19 @@ class OrdersController < ApplicationController
         end
 
         @order.itemId = params[:itemId]
-        @order.description = item['description']
-        @order.customerId = customer['id']
-        @order.price = item['price']
-        @order.award = customer['award']
+
+        if (item[:price] == nil)
+          @order.description = item['description']
+          @order.customerId = customer['id']
+          @order.price = item['price']
+          @order.award = customer['award']
+        else
+          @order.description = item[:description]
+          @order.customerId = customer[:id]
+          @order.price = item[:price]
+          @order.award = customer[:award]
+        end
+
         @order.total = (@order.price - @order.award)
 
         if @order.save
