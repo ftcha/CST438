@@ -36,19 +36,17 @@ RSpec.describe "Orders", type: :request do
 
   describe "POST /orders" do
     it "customer makes purchase" do
-      order = { itemId: 100,
-                email: 'unitTest@csumb.edu' }
+      order = { itemId: 1, email: 'unitTest@csumb.edu' }
 
-      headers = {"CONTENT_TYPE" => "application/json" ,
-                 "ACCEPT" => "application/json"}
+      headers = {"CONTENT_TYPE" => "application/json" , "ACCEPT" => "application/json"}
 
       expect(Customer).to receive(:getCustomerByEmail).with('unitTest@csumb.edu') do
         [ 200, {'id' => 1, 'award'=> 0 } ]
       end
 
-      expect(Item).to receive(:getItemById).with(100) do
-        [ 200, { 'id'=>100, 'description'=>'jewelry item',
-                      'price'=> 175.00, 'stockQty'=> 2 } ]
+      expect(Item).to receive(:getItemById).with(1) do
+        [ 200, { 'id'=>1, 'description'=>'pants',
+                      'price'=> 10.00, 'stockQty'=> 2 } ]
       end
 
       allow(Customer).to receive(:putOrder) do |order|
@@ -57,7 +55,7 @@ RSpec.describe "Orders", type: :request do
       end
 
       allow(Item).to receive(:putOrder) do |order|
-        expect(order.itemId).to eq 100
+        expect(order.itemId).to eq 1
         201
       end
 
@@ -65,12 +63,12 @@ RSpec.describe "Orders", type: :request do
 
       expect(response).to have_http_status(201)
       order_json = JSON.parse(response.body)
-      expect(order_json).to include('itemId'=>100,
-                                    'description'=>'jewelry item',
+      expect(order_json).to include('itemId'=>1,
+                                    'description'=>'pants',
                                     'customerId'=> 1 ,
-                                    'price'=>175.00,
+                                    'price'=>10.00,
                                     'award'=> 0,
-                                    'total'=> 175.00 )
+                                    'total'=> 10.00 )
 
     end
 

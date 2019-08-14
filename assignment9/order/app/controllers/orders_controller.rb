@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
           return
         end 
         
-        if item[:stockQty] = 0
+        if item[:stockQty] == 0
           render json: { error: "Item not in stock" } , status: 400
           return
         end 
