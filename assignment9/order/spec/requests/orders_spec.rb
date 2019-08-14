@@ -15,7 +15,7 @@ RSpec.describe "Orders", type: :request do
     end
 
     it "get orders by customerId"  do
-      get '/orders?customerId=1000',  headers: {"CONTENT_TYPE" => "application/json" ,
+      get '/orders?customerId=100',  headers: {"CONTENT_TYPE" => "application/json" ,
                                   "ACCEPT" => "application/json" }
       expect(response).to have_http_status(200)
       json_orders = JSON.parse(response.body)
@@ -24,7 +24,7 @@ RSpec.describe "Orders", type: :request do
 
     it "get orders by customer email" do
       expect(Customer).to receive(:getCustomerByEmail).with('unitTest@csumb.edu') do
-          [ 200, { id:  1000, award: 0 } ]
+          [ 200, { id:  100, award: 0 } ]
       end
       get '/orders?email=unitTest@csumb.edu',  headers: {"CONTENT_TYPE" => "application/json" ,
                                   "ACCEPT" => "application/json" }
