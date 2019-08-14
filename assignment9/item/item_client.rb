@@ -3,7 +3,7 @@ require 'httparty'
 class ItemClient
   include HTTParty
 
-  base_uri "http://localhost:8080"
+  base_uri "http://localhost:8082"
   format :json
 
   def self.create(i)

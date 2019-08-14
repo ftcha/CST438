@@ -64,40 +64,38 @@ end
 command = true
 
 while command 
-  puts "What do you want to do: (1) Register customer, (2) Item create, (3) Purchase, (4) Customer lookup, (5) Item lookup, (6) Order lookup, or quit?"
+  puts "What do you want to do: (3) Register Customer, (5) Create Item, (1) New Order, (4) Lookup Customer, (6) Lookup Item, (2) Retrieve Order, (7) Quit"
   cmd = gets.chomp! 
   puts  
   case cmd
-    when 'quit'
-      command = false
-    when '1'  # register customer
-      puts 'register customer. enter lastName firstName email. Separate the fields with a blank space.'
-      cdata = gets.chomp!.split()
-      response = CustomerClient.register lastName: cdata[0], firstName: cdata[1], email: cdata[2] 
-      puts "status code #{response.code}"
-      puts response.body  unless response.code==500
-      puts
-      
-    when '2'  # create item
-      puts 'enter item description price stockQty.  Separate the fields with a blank space.'
-      idata = gets.chomp!.split()
-      response = ItemClient.create description: idata[0], price: idata[1], stockQty: idata[2]
-      puts "status code #{response.code}"
-      puts response.body unless response.code==500
-      puts
-    
-    when '3'  # create an order
-      puts 'enter item id'
+    when '1'
+      puts 'Please enter the Item ID'
       itemId = gets.chomp!
       puts 'enter email'
       email = gets.chomp!
       response = OrderClient.create itemId: itemId, email: email
       puts "status code #{response.code}"
       puts response.body unless response.code==500
-      puts 
+      puts
       
-    when '4'  # lookup customer
-      puts 'enter customer id or email'
+    when '2'
+      puts 'Please enter Order ID to lookup'
+      id = gets.chomp!
+      response = OrderClient.getId(id)
+      puts "status code #{response.code}"
+      puts response.body unless response.code==500
+      puts
+        
+    when '3'
+      puts 'Register a new customer - Please enter Last Name, First Name, Email Address - separate by space'
+      cdata = gets.chomp!.split()
+      response = CustomerClient.register lastName: cdata[0], firstName: cdata[1], email: cdata[2] 
+      puts "status code #{response.code}"
+      puts response.body  unless response.code==500
+      puts
+    
+    when '4'
+      puts 'Please enter Customer ID or Email Address'
       cid = gets.chomp!
       if cid.include?('@')
         response = CustomerClient.getEmail(cid)
@@ -107,8 +105,16 @@ while command
       puts "status code #{response.code}"
       puts response.body unless response.code==500
       puts
-        
-    when '5'  # lookup item
+      
+    when '5'
+      puts 'Please enter Item Description, Price, Stock - separate by space'
+      idata = gets.chomp!.split()
+      response = ItemClient.create description: idata[0], price: idata[1], stockQty: idata[2]
+      puts "status code #{response.code}"
+      puts response.body unless response.code==500
+      puts
+    
+    when '6'
       puts 'enter id of item to lookup'
       id = gets.chomp!
       response = ItemClient.getId(id)
@@ -116,16 +122,7 @@ while command
       puts response.body unless response.code==500
       puts
     
-    when '6'  # lookup order 
-      puts 'enter id of order to lookup'
-      id = gets.chomp!
-      response = OrderClient.getId(id)
-      puts "status code #{response.code}"
-      puts response.body unless response.code==500
-      puts
-
-    else
-      puts "I don't understand.  Enter the number of the action to perform (ex.  3  ) or quit" 
-      puts
+    when '7'
+      command = false
   end 
 end 
