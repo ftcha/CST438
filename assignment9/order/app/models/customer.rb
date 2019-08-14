@@ -1,4 +1,4 @@
-class SendToCustomerApp
+class Customer
     include HTTParty
     base_uri "http://localhost:8081"
     format :json

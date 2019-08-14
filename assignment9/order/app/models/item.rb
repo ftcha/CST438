@@ -1,6 +1,6 @@
-class SendToItemApp
+class Item
     include HTTParty
-    base uri "http://localhost:8082"
+    base_uri "http://localhost:8082"
     format :json
 
     def self.getItemById(id)
