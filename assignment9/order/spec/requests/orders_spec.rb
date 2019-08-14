@@ -37,12 +37,12 @@ RSpec.describe "Orders", type: :request do
   describe "POST /orders" do
     it "customer makes purchase" do
       order = { itemId: 100,
-                email: 'dw@csumb.edu' }
+                email: 'unitTest@csumb.edu' }
 
       headers = {"CONTENT_TYPE" => "application/json" ,
                  "ACCEPT" => "application/json"}
 
-      expect(Customer).to receive(:getCustomerByEmail).with('dw@csumb.edu') do
+      expect(Customer).to receive(:getCustomerByEmail).with('unitTest@csumb.edu') do
         [ 200, {'id' => 1, 'award'=> 0 } ]
       end
 
@@ -103,7 +103,7 @@ RSpec.describe "Orders", type: :request do
     it "purchase item that is not in stock" do
 
       order = { itemId: 100,
-                email: 'unitTest@csumb.eduu' }
+                email: 'unitTest@csumb.edu' }
 
       headers = {"CONTENT_TYPE" => "application/json" ,
                  "ACCEPT" => "application/json"}

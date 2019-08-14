@@ -7,13 +7,11 @@ class OrderClient
 	format :json
  
   def self.create(order) 
-    post '/orders', body: order.to_json, 
-         headers:  { 'Content-Type' => 'application/json', 'ACCEPT' => 'application/json' }
+    post '/orders', body: order.to_json, headers:  { 'Content-Type' => 'application/json', 'ACCEPT' => 'application/json' }
   end 
   
   def self.getId(id)
-    get "/orders/#{id}" , 
-      headers:  { 'ACCEPT' => 'application/json' }
+    get "/orders/#{id}", headers:  { 'ACCEPT' => 'application/json' }
   end
 end 
 
@@ -24,18 +22,15 @@ class ItemClient
 	format :json
  
   def self.create(item) 
-    post '/items', body: item.to_json, 
-         headers:  { 'Content-Type' => 'application/json', 'ACCEPT' => 'application/json' }
+    post '/items', body: item.to_json, headers:  { 'Content-Type' => 'application/json', 'ACCEPT' => 'application/json' }
   end 
   
   def self.update(item)
-     put "/items/#{item[:id]}", body: item.to_json, 
-         headers:  { 'Content-Type' => 'application/json', 'ACCEPT' => 'application/json' }
+     put "/items/#{item[:id]}", body: item.to_json, headers:  { 'Content-Type' => 'application/json', 'ACCEPT' => 'application/json' }
   end
   
   def self.getId(id)
-    get "/items/?id=#{id}" , 
-      headers:  { 'ACCEPT' => 'application/json' }
+    get "/items/?id=#{id}", headers:  { 'ACCEPT' => 'application/json' }
   end
 end 
 
@@ -46,25 +41,22 @@ class CustomerClient
 	format :json
   
   def self.register(cust)
-    post '/customers', body: cust.to_json, 
-         headers:  { 'Content-Type' => 'application/json', 'ACCEPT' => 'application/json' }
+    post '/customers', body: cust.to_json, headers:  { 'Content-Type' => 'application/json', 'ACCEPT' => 'application/json' }
   end 
   
   def self.getEmail(email)
-    get "/customers?email=#{email}" ,
-      headers:  { 'ACCEPT' => 'application/json' }
+    get "/customers?email=#{email}", headers:  { 'ACCEPT' => 'application/json' }
   end
   
   def self.getId(id)
-    get "/customers?id=#{id}" , 
-      headers:  { 'ACCEPT' => 'application/json' }
+    get "/customers?id=#{id}", headers:  { 'ACCEPT' => 'application/json' }
   end
 end 
 
 command = true
 
 while command 
-  puts "What do you want to do: (1) New Order, (2) Retrieve Order, (3) Register Customer, (4) Lookup Customer, (5) Create Item, (6) Lookup Item, (7) Quit"
+  puts "What do you want to do: (1) New Order, (2) Retrieve Order, (3) Register Customer, (4) Lookup Customer, (5) Create Item, (6) Lookup Item, (7) Exit"
   cmd = gets.chomp! 
   puts  
   case cmd
@@ -115,7 +107,7 @@ while command
       puts
     
     when '6'
-      puts 'enter id of item to lookup'
+      puts 'Please enter Item ID to lookup'
       id = gets.chomp!
       response = ItemClient.getId(id)
       puts "status code #{response.code}"
