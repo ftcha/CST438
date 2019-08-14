@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
         end
 
         @order.itemId = params[:itemId]
-        @order.description = item['id']
+        @order.description = item['description']
         @order.customerId = customer['id']
         @order.price = item['price']
         @order.award = customer['award']
